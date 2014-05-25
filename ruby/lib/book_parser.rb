@@ -20,14 +20,15 @@ class BookParser
 
   def report
     data = occurences(split(@book))
-    report = "Word  |  Number of Words\n"
+    report = "Word  |  Number of Words  |  Prime?\n"
     data.each{ |key, value|
-      report << "#{key}  |  #{value}\n"
+      report << "#{key}  |  #{value}  |  #{prime?(value).to_s.capitalize}\n"
     }
     report.chomp
   end
 
   def prime?(integer)
+    return false if integer == 1
     (2..integer).each{|number| return false if integer%number == 0 unless number == integer }
     true
   end

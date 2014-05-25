@@ -34,7 +34,7 @@ describe BookParser do
 
   it "can produce a report on the text file" do
     parser.book = string
-    expect(parser.report).to eq "Word  |  Number of Words\nThis  |  2\nIs  |  1\nSimples  |  1\nWill  |  1\nBe  |  1\nFun  |  1"
+    expect(parser.report).to eq "Word  |  Number of Words  |  Prime?\nThis  |  2  |  True\nIs  |  1  |  False\nSimples  |  1  |  False\nWill  |  1  |  False\nBe  |  1  |  False\nFun  |  1  |  False"
   end
 
   it "knows if a number is a prime or not" do
