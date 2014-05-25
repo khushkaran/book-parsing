@@ -26,4 +26,9 @@ class BookParser
     }
     report.chomp
   end
+
+  def prime?(integer)
+    (2..integer).each{|number| return false if integer%number == 0 unless number == integer }
+    true
+  end
 end

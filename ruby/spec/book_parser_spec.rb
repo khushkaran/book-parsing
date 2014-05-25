@@ -36,5 +36,13 @@ describe BookParser do
     parser.book = string
     expect(parser.report).to eq "Word  |  Number of Words\nThis  |  2\nIs  |  1\nSimples  |  1\nWill  |  1\nBe  |  1\nFun  |  1"
   end
+
+  it "knows if a number is a prime or not" do
+    expect(parser.prime?(2)).to be true
+    expect(parser.prime?(3)).to be true
+    expect(parser.prime?(4)).to be false
+    expect(parser.prime?(983)).to be true
+    expect(parser.prime?(984)).to be false
+  end
   
 end
