@@ -29,4 +29,11 @@ To run the application run `irb`:
 ```
 require "./ruby/lib/book_parser"
 => true
+parser = BookParser.new("../text.txt")
+=> #<BookParser:0x007f80f1d53260 @book="*The Project ...
+puts parser.report
+Word  |  Number of Words  |  Prime?
+The  |  3419  |  False
+Project  |  33  |  False
+...
 ```
