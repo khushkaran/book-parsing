@@ -1,5 +1,5 @@
 class BookParser
-  attr_reader :book
+  attr_accessor :book
 
   def initialize(textfile)
     @book = File.read(textfile)
@@ -13,8 +13,17 @@ class BookParser
   def occurences(string)
     counts = Hash.new 0
     string.each do |word|
-      counts[word] += 1
+      counts[word.capitalize] += 1
     end
     counts
+  end
+
+  def report
+    data = occurences(split(@book))
+    report = "Word  |  Number of Words\n"
+    data.each{ |key, value|
+      report << "#{key}  |  #{value}\n"
+    }
+    report.chomp
   end
 end
