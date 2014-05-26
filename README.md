@@ -20,6 +20,7 @@ have been kind enough to allow me to write it in Ruby also.
 - Git(Hub)
 - C#
 - Xamarin Studio
+- Mono
 - NUnit
 
 ### The Instructions
@@ -36,4 +37,9 @@ Word  |  Number of Words  |  Prime?
 The  |  3419  |  False
 Project  |  33  |  False
 ...
+```
+
+##### C# Version
+```
+Load the project and run it within MonoDevelop.
 ```
