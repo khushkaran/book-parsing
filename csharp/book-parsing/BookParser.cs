@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
 
 namespace bookparsing
 {
@@ -13,6 +15,11 @@ namespace bookparsing
 			string text = streamReader.ReadToEnd();
 			streamReader.Close();
 			return text;
+		}
+
+		public static Array SplitBook(string book){
+			string[] words = Regex.Split (book, @"[^\w\s]");
+			return words;
 		}
 	}
 }

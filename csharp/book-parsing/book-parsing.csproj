@@ -35,5 +35,6 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="nunit.framework" />
+    <Reference Include="System" />
   </ItemGroup>
 </Project>
