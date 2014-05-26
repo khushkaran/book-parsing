@@ -14,7 +14,7 @@ namespace bookparsing
 		[Test ()]
 		public void SplitBook (){
 			string book = BookParser.LoadBook("../../../../text.txt");
-			Assert.AreEqual (61352, BookParser.SplitBook (book).Length);
+			Assert.AreEqual (61279, BookParser.SplitBook (book).Length);
 		}
 	}
 }
