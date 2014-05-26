@@ -17,6 +17,14 @@ namespace bookparsing
 			var split = BookParser.SplitBook (book);
 			Assert.AreEqual ("The", split.GetValue(0));
 		}
+
+		[Test ()]
+		public void Occurences (){
+			string book = BookParser.LoadBook("../../../../text.txt");
+			var split = BookParser.SplitBook (book);
+			var occurences = BookParser.Occurences (split);
+			Assert.AreEqual (3437, occurences["The"]);
+		}
 	}
 }
 
