@@ -8,6 +8,12 @@ namespace bookparsing
 	public class BookParser
 	{
 		public static void Main(){
+			string book = LoadBook ("../../../../text.txt");
+			Array splitbook = SplitBook(book);
+			foreach (string value in splitbook)
+			{
+				Console.WriteLine(value);
+			}
 		}
 
 		public static string LoadBook(string filepath){
@@ -18,7 +24,8 @@ namespace bookparsing
 		}
 
 		public static Array SplitBook(string book){
-			string[] words = Regex.Split (book, @"[^\w\s]");
+			string cleanedBook = Regex.Replace(book, "[^\\w\\-\\s]", "");
+			var words = cleanedBook.Split(' ');
 			return words;
 		}
 	}
