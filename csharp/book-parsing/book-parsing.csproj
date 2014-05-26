@@ -29,4 +29,11 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="BookParser.cs" />
+    <Compile Include="BookParserTestClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework" />
+  </ItemGroup>
 </Project>
