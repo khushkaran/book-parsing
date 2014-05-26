@@ -27,11 +27,32 @@ namespace bookparsing
 		}
 
 		[Test ()]
-		public void PrimeNumber (){
+		public void PrimeNumberOne (){
+			Assert.IsFalse (BookParser.PrimeNumber (1));
+		}
+
+		[Test ()]
+		public void PrimeNumberTwo (){
 			Assert.IsTrue (BookParser.PrimeNumber (2));
+		}
+
+		[Test ()]
+		public void PrimeNumberThree (){
 			Assert.IsTrue (BookParser.PrimeNumber (3));
+		}
+
+		[Test ()]
+		public void PrimeNumberFour (){
 			Assert.IsFalse (BookParser.PrimeNumber (4));
+		}
+
+		[Test ()]
+		public void PrimeNumberNineEightThree (){
 			Assert.IsTrue (BookParser.PrimeNumber (983));
+		}
+
+		[Test ()]
+		public void PrimeNumberNineEightFour (){
 			Assert.IsFalse (BookParser.PrimeNumber (984));
 		}
 	}
