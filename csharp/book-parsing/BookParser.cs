@@ -45,7 +45,6 @@ namespace bookparsing
 		public static ConcurrentDictionary<string, int> Occurences(Array words){
 			ConcurrentDictionary<string, int> occurences = new ConcurrentDictionary<string, int>();
 			foreach (string word in words){
-//				string lowercaseWord = word.ToLower();
 				occurences.AddOrUpdate (UpdateWord(word), 1, (s, i) => i + 1);
 			}
 			return occurences;
