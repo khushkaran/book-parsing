@@ -8,6 +8,11 @@ namespace bookparsing
 		{
 			Console.WriteLine("Yo!");
 		}
+
+		public static string LoadBook(string filepath){
+			Console.WriteLine(filepath);
+			return filepath;
+		}
 	}
 }
 
