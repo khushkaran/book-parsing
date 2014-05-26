@@ -25,6 +25,15 @@ namespace bookparsing
 			var occurences = BookParser.Occurences (split);
 			Assert.AreEqual (3437, occurences["The"]);
 		}
+
+		[Test ()]
+		public void PrimeNumber (){
+			Assert.IsTrue (BookParser.PrimeNumber (2));
+			Assert.IsTrue (BookParser.PrimeNumber (3));
+			Assert.IsFalse (BookParser.PrimeNumber (4));
+			Assert.IsTrue (BookParser.PrimeNumber (983));
+			Assert.IsFalse (BookParser.PrimeNumber (984));
+		}
 	}
 }
 
