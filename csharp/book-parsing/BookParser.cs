@@ -45,8 +45,8 @@ namespace bookparsing
 		public static ConcurrentDictionary<string, int> Occurences(Array words){
 			ConcurrentDictionary<string, int> occurences = new ConcurrentDictionary<string, int>();
 			foreach (string word in words){
-				string lowercaseWord = word.ToLower();
-				occurences.AddOrUpdate (UppercaseFirst(lowercaseWord), 1, (s, i) => i + 1);
+//				string lowercaseWord = word.ToLower();
+				occurences.AddOrUpdate (UpdateWord(word), 1, (s, i) => i + 1);
 			}
 			return occurences;
 		}
@@ -61,10 +61,11 @@ namespace bookparsing
 			return true;
 		}
 
-		static string UppercaseFirst(string s){
+		static string UpdateWord(string s){
 			if (string.IsNullOrEmpty(s)){
 				return string.Empty;
 			}
+			s = s.ToLower ();
 			return char.ToUpper(s[0]) + s.Substring(1);
 		}
 	}
