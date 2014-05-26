@@ -59,8 +59,9 @@ namespace bookparsing
 		[Test ()]
 		public void ProduceReport (){
 			string testString = "This is simples! This will be fun!";
-			string expected = "Word  |  Number of Words  |  Prime?\nThis  |  2  |  True\nIs  |  1  |  False\nSimples  |  1  |  False\nWill  |  1  |  False\nBe  |  1  |  False\nFun  |  1  |  False";
-			Assert.AreSame(expected, BookParser.ProduceReport(testString));
+			string expected = "Word  |  Number of Words  |  Prime?\nWill  |  1  |  False\nIs  |  1  |  False\nThis  |  2  |  True\nSimples  |  1  |  False\nBe  |  1  |  False\nFun  |  1  |  False";
+
+			Assert.AreEqual(expected, BookParser.ProduceReport(testString));
 		}
 	}
 }

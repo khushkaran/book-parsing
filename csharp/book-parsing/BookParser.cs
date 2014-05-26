@@ -23,6 +23,9 @@ namespace bookparsing
 //			}
 //			Console.WriteLine (occurences ["The"]);
 //			Console.WriteLine (PrimeNumber (4));
+			string testString = "This is simples! This will be fun!";
+			string expected = "Word  |  Number of Words  |  Prime?\nThis  |  2  |  True\nIs  |  1  |  False\nSimples  |  1  |  False\nWill  |  1  |  False\nBe  |  1  |  False\nFun  |  1  |  False";
+			Console.WriteLine (BookParser.ProduceReport (testString));
 		}
 
 		public static string LoadBook(string filepath){
@@ -48,6 +51,16 @@ namespace bookparsing
 				occurences.AddOrUpdate (UpdateWord(word), 1, (s, i) => i + 1);
 			}
 			return occurences;
+		}
+
+		public static string ProduceReport(string text){
+			string report = "Word  |  Number of Words  |  Prime?\n";
+			var data = Occurences(SplitBook(text));
+			foreach(KeyValuePair<string, int> entry in data){
+				report += string.Format("{0}  |  {1}  |  {2}\n", entry.Key, entry.Value, PrimeNumber(entry.Value));
+			}
+			report = report.Remove(report.Length - 1);
+			return report;
 		}
 
 		public static bool PrimeNumber(int n){
