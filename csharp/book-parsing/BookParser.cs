@@ -11,21 +11,8 @@ namespace bookparsing
 	public class BookParser
 	{
 		public static void Main(){
-//			string book = LoadBook ("../../../../text.txt");
-//			Array splitbook = SplitBook(book);
-//			ConcurrentDictionary<string, int> occurences = Occurences (splitbook);
-//			foreach (string value in splitbook){
-//				Console.WriteLine(value);
-//			}
-//			foreach(KeyValuePair<string, int> entry in occurences)
-//			{
-//				Console.WriteLine(entry);
-//			}
-//			Console.WriteLine (occurences ["The"]);
-//			Console.WriteLine (PrimeNumber (4));
-			string testString = "This is simples! This will be fun!";
-			string expected = "Word  |  Number of Words  |  Prime?\nThis  |  2  |  True\nIs  |  1  |  False\nSimples  |  1  |  False\nWill  |  1  |  False\nBe  |  1  |  False\nFun  |  1  |  False";
-			Console.WriteLine (BookParser.ProduceReport (testString));
+			var text = LoadBook ("../../../../text.txt");
+			Console.WriteLine (BookParser.ProduceReport (text));
 		}
 
 		public static string LoadBook(string filepath){
