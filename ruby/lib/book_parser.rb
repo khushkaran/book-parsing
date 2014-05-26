@@ -7,6 +7,7 @@ class BookParser
 
   def split(string)
     string.gsub!(/[^\w\-\s]/, "")
+    string.gsub!("--", " ")
     string.split(" ")
   end
 
