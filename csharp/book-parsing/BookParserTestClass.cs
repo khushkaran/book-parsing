@@ -8,7 +8,7 @@ namespace bookparsing
 	{
 		[Test ()]
 		public void LoadBook (){
-			Assert.IsNotEmpty (BookParser.LoadBook ("../../text.txt"));
+			Assert.IsNotEmpty (BookParser.LoadBook("../../../../text.txt"));
 		}
 	}
 }
